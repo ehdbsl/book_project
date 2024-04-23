@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* 내가 추가한 코드------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&family=Ubuntu:wght@400;500;700&display=swap');
+
+body {
+    font-family: "Noto Sans KR", "Ubuntu";
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
