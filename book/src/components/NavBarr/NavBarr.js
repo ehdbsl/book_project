@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './NavBarr.css';
 import bookimg from './book_1.png';
 import searchbtn from './zoom.png';
-import mobMenu from './mob-menu.png';
+// import mobMenu from './mob-menu.png';
 
 function NavBarr() {
     const [username, setUsername] = useState('');
@@ -25,9 +25,19 @@ function NavBarr() {
                 <div className="logo">
                 <img src={bookimg} alt="Book Menu"/>
                 </div>
-                <div className="mobileMenu" style={{display: 'none'}}>
+                <div className="mobileMenu">
+                    <ul>
+                        <li>
+                            공지사항
+                        </li>
+                        <li>
+                            보도자료
+                        </li>
+                    </ul>
+                </div> 
+                {/* <div className="mobileMenu" style={{display: 'none'}}>
                     <img src={mobMenu} alt="mobile Menu" />
-                </div>
+                </div> */}
                 {Object.keys(menuItems).map((menu) => (
                     <div 
                     className="menu-item"

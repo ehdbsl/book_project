@@ -3,13 +3,15 @@ import './RecContents.css';
 import recimgmain from './rec-img2-1.jpg';
 
 function RecContents() {
-    const recItems = document.querySelectorAll('rec-items');
+    // const recItems = document.querySelectorAll('rec-items');
 
     const [activeCard, setActiveCard] = useState(1); // 활성화된 카드의 번호 상태
 
-    const handlePageClick = (pageNumber) => {
-        setActiveCard(pageNumber); // 클릭된 페이지 번호로 상태 업데이트
-    };
+    // const handlePageClick = (pageNumber) => {
+    //     setActiveCard(pageNumber); // 클릭된 페이지 번호로 상태 업데이트
+    // };
+
+    
     return (
         <div className="rec-contents">
             <div className="rec-title">
@@ -27,7 +29,7 @@ function RecContents() {
                     </div>
                 </div>
     {/* ----------------------------------------------------------------------------------------------------- */}
-                <div className="rec-item-2">
+                <div className="rec-item-2" style={{display: 'none'}}>
                     <div className="card" id="card1">카드 2</div>
                     <div className="cardinfo">
                         <h2>줄거리 :</h2>
@@ -35,7 +37,7 @@ function RecContents() {
 
                     </div>
                 </div>
-                <div className="rec-item-2">
+                <div className="rec-item-2" style={{display: 'none'}}> 
                     <div className="card" id="card1">카드 2</div>
                     <div className="cardinfo">
                         <h2>줄거리 :</h2>

@@ -1,0 +1,61 @@
+.content-menu {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+    border-top: 1px dotted #bbbbbb;
+}
+
+.footer {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+    border-top: 1px dotted #bbbbbb;
+    text-align: center;
+}
+
+.footer p {
+    clear: both;
+}
+
+.menuAll {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px dotted #bbbbbb;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.notice {
+    display: block;
+    float: left;
+    width: 150px;
+    border-right: 1px dotted #bbb;
+}
+
+.bookinfo {
+    display: block;
+    float: left;
+    width: 150px;
+    border-right: 1px dotted #bbb;
+}
+
+.libraryinfo {
+    display: block;
+    float: left;
+    width: 150px;
+    border-right: 1px dotted #bbb;
+}
+
+.mypage {
+    display: block;
+    float: left;
+    width: 150px;
+
+}
+
+li {
+    list-style-type: none;
+}

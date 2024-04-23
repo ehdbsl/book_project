@@ -1,0 +1,60 @@
+.event {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.event p {
+    line-height: 15px;
+}
+
+#pages {
+    margin-bottom: 5px;
+}
+
+#pages button {
+    font-size: 10px;
+    margin-left: 10px;
+    background-color: #e1e1e1;
+    border: none;
+    color: #f1f1f1;
+    border-radius: 100%;
+}
+
+#pages button:hover {
+    cursor: pointer;
+}
+
+.event p {
+    font-size: 30px;
+    font-weight: bold;
+}
+.content1 {
+    position: relative;
+    display: block;
+    background-color: rgb(26, 26, 26);
+}
+
+.eventPage {
+    text-align: center;
+}
+
+#main-img {
+    overflow: hidden;
+    width: 100%;
+}
+
+#main-img img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 100%;
+    transition: transform 0.3s ease-out;
+}
+
+#main-img.slide img {
+    transform: translateX(-100%);
+}
