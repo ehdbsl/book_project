@@ -1,0 +1,11 @@
+.rec-title {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.rec-title p {
+    font-size: 30px;
+    font-weight: bold;
+}
