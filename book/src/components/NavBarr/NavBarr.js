@@ -4,11 +4,17 @@ import bookimg from './book_1.png';
 import searchbtn from './zoom.png';
 // import mobMenu from './mob-menu.png';
 
+
 function NavBarr() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [search, setSearch] = useState('');
     const [activeMenu, setActiveMenu] = useState('');
+
+    const [mobileVisible, setMobileVisible] = useState(false);  // 모바일환경에서의 메뉴
+    const toggleMobileMenu = () => {
+        setMobileVisible(!mobileVisible);
+    };     // mobileVisible 상태를 토글
 
     const menuItems = {
         "공지사항": ["보도자료", "이벤트"],
@@ -23,21 +29,16 @@ function NavBarr() {
     return (
         <div className="navbar">
                 <div className="logo">
-                <img src={bookimg} alt="Book Menu"/>
+                <img src={bookimg} alt="Book Menu" />
                 </div>
-                <div className="mobileMenu">
+                <div className="mobileMenu" style={{display: mobileVisible ? 'block' : 'none'}}>
+                    <img src={bookimg} alt="mobileMenu" onClick={toggleMobileMenu} style={{cursor: 'pointer'}} />
                     <ul>
-                        <li>
-                            공지사항
-                        </li>
-                        <li>
-                            보도자료
-                        </li>
+                        <h3>공지사항</h3>
+                        <li>보도자료</li>
+                        <li>이벤트</li>
                     </ul>
                 </div> 
-                {/* <div className="mobileMenu" style={{display: 'none'}}>
-                    <img src={mobMenu} alt="mobile Menu" />
-                </div> */}
                 {Object.keys(menuItems).map((menu) => (
                     <div 
                     className="menu-item"
