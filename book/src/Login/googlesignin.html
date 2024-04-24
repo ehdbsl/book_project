@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login with Google</title>
+</head>
+<body>
+    <div id="signin-button" onClick="googleSignIn()">
+        <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="Google SignIn Button">
+    </div>
+
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script>
+        var clientId = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
+        var redirectURI = 'http://localhost:8000/oauth2callback';
+        var scope = 'email';
+
+        function googleSignIn() {
+            gapi.load('auth2', function() {
+                var auth2 = gapi.auth2.init({
+                    client_id: clientId,
+                    cookiepolicy: 'single_host_origin',
+                    scope: scope
+                });
+                auth2.signIn().then(function(googleUser) {
+                    var id_token = googleUser.getAuthResponse().id_token;
+                    console.log(id_token);
+                    // 여기에 id_token을 서버로 전송하고 처리해야합니다.
+                });
+            });
+        }
+    </script>
+</body>
+</html>
