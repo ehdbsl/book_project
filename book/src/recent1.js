@@ -35,6 +35,7 @@ app.post('/add-recent-book', (req, res) => {
     });
 });
 
+
 // 최근 목록 조회 엔드포인트
 app.get('/recent-books', (req, res) => {
     const query = 'SELECT title, author FROM recent_books ORDER BY viewed_at DESC LIMIT 10';
