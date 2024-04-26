@@ -37,7 +37,7 @@ function RegistrationForm() {
                 <input type="hidden" name="ssncheck" id="ssncheck" value="n" />
                 <p>아이디:<input type="text" name="userid" value={userId} onChange={(e) => setUserId(e.target.value)} maxLength="20" /></p>
                 <p>패스워드:<input type="password" name="userpw" value={userPw} onChange={(e) => setUserPw(e.target.value)} maxLength="20" /></p>
-                <p>패스워드:<input type="password" name="userpw_re" value={userPwRe} onChange={(e) => setUserPw_Re(e.target.value)} maxLength="20" /></p>
+                <p>패스워드:<input type="password" name="userpw_re" value={userPw_Re} onChange={(e) => setUserPw_Re(e.target.value)} maxLength="20" /></p>
                 <p>이름:<input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} maxLength="10" /></p>
                 <p>휴대폰번호:<input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} maxLength="20" /></p>
                 <p>이메일:<input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength="50" /></p>

@@ -3,7 +3,7 @@ import './NavBarr.css';
 import bookimg from './book_1.png';
 import searchbtn from './zoom.png';
 // import mobMenu from './mob-menu.png';
-
+import  RegistrationForm from './regist.js';
 
 function NavBarr() {
     const [username, setUsername] = useState('');
@@ -77,7 +77,7 @@ function NavBarr() {
                 onChange={(e) => setPassword(e.target.value)}
                 />
                 <button class="btn" onClick={handleLogin}>로그인</button>
-                <button class="btn">회원가입</button>
+                <button class="btn" >회원가입</button>
             </div>        
         </div>      
     );

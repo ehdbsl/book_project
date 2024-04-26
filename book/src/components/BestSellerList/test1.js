@@ -30,5 +30,5 @@ export async function scrapeBookData() {
   return firstThreeResults;
 }
 
-// 함수 실행
-scrapeBookData();
+// // 함수 실행
+// scrapeBookData();

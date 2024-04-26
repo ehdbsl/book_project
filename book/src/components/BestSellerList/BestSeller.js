@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import {scrapeBookData} from './test1.js';
+// import {scrapeBookData} from './test1.js';
 
 function BestSellerList() {
     const [books, setBooks] = useState([]);
 
     useEffect(()=>{
-        async function fetchData() {
-            const results = await scrapeBookData();
-            setBooks(results); // 가져온 데이터를 상태에 저장
-        }
-        fetchData();
+        // async function fetchData() {
+        //     // const results = await scrapeBookData();
+        //     setBooks(results); // 가져온 데이터를 상태에 저장
+        // }
+        // fetchData();
     }, []); // 빈 배열을 전달하여 컴포넌트가 마운트 될 때만 일회성으로 fetchData 함수를 호출
 
     return (
