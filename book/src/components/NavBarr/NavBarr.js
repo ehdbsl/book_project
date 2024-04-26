@@ -64,7 +64,7 @@ function NavBarr() {
                     <li>전체도서목록</li>
                 </ul>
                 <ul>
-                    <h2>마이페이지</h2>
+                    <h2 ><Link to="/Mypage">마이페이지</Link></h2>
                     <li>즐겨찾기 목록</li>
                     <li>최근 본 도서 목록</li>
                 </ul>
