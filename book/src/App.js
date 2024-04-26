@@ -10,15 +10,15 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
+
                 <Route path="/notice" element={<Notice />} />
-            </Routes>
-            <div>
                 <NavBarr />
                 <EvenContent />
                 <RecContents />
                 <Places />
                 <Footer />
-            </div>
+
+            </Routes>
         </BrowserRouter>
     );
 }
