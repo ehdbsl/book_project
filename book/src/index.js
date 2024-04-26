@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './RecContents/RecContents'
-import RecContents from './RecContents/RecContents';
+// import './RecContents/RecContents';
+import './components/RecContents/RecContents.js';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

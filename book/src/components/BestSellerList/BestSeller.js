@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
-// import {scrapeBookData} from './test1.js';
+import axios from 'axios';
 
 function BestSellerList() {
-    const [books, setBooks] = useState([]);
+    const [topFiveBooks, setTopFiveBooks] = useState([]);
 
-    useEffect(()=>{
-        // async function fetchData() {
-        //     // const results = await scrapeBookData();
-        //     setBooks(results); // 가져온 데이터를 상태에 저장
-        // }
-        // fetchData();
-    }, []); // 빈 배열을 전달하여 컴포넌트가 마운트 될 때만 일회성으로 fetchData 함수를 호출
+    useEffect(() => {
+        const fetchTopFiveBooks = async () => {
+          try {
+            const response = await axios.get('http://localhost:3005/top5');
+            setTopFiveBooks(response.data);
+          } catch (error) {
+            console.error('Error fetching top five books:', error);
+          }
+        };
+    
+        fetchTopFiveBooks();
+      }, []);
 
     return (
         <div>
-            {books.map((book, index) => ( // books 배열을 map으로 순회하며 각 책의 정보를 표시
+            {topFiveBooks.map((book, index) => ( // books 배열을 map으로 순회하며 각 책의 정보를 표시
                 <div key={index} className="book">
                     <img src={book.imgElement} alt={book.titleElement} />
                     <div className="book-details">

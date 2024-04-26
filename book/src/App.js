@@ -1,24 +1,27 @@
-import React from 'react';
-// import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBarr from './components/NavBarr/NavBarr'
 import EvenContent from './components/EventContent/EventContent';
 // import RecContent from './components/RecContent/RecContent';
 import RecContents from './components/RecContents/RecContents';
-import BestSellerList from './components/BestSellerList/BestSeller';
 import Places from './components/Places/Places';
 import Footer from './components/Footer/Footer';
+import Notice from './components/Notice/Notice';
+
 
 function App() {
     return (
-        <div>
-            <NavBarr />
-            <EvenContent />
-            {/* <RecContent /> */}
-            <RecContents />
-            <BestSellerList />
-            <Places />
-            <Footer />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/notice" element={<Notice />} />
+            </Routes>
+            <div>
+                <NavBarr />
+                <EvenContent />
+                <RecContents />
+                <Places />
+                <Footer />
+            </div>
+        </BrowserRouter>
     );
 }
 

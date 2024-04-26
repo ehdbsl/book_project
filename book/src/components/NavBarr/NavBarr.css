@@ -1,12 +1,17 @@
 .navbar {
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   color: #444;
   font-weight: bold;
   padding: 5px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+
+input:focus {
+  outline: none;
 }
   
 .logo, .menu-item, .login-section {
@@ -24,6 +29,22 @@
   height: 17px;
 }
 
+.mob-search {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+#btn-mob-menu {
+  display: none;
+}
+
+#btn-cancel {
+  display: none;
+}
+
 .submenu {
   position: absolute;
   background-color: white;
@@ -32,6 +53,11 @@
   top: 100%;
   left: 0;
   width: 150px;
+}
+
+.submenu a:link, a:hover {
+  color: #444;
+  cursor: pointer;
 }
 
 .submenu div {
@@ -43,6 +69,11 @@
   margin-left: auto; /* 왼쪽으로 자동 마진을 적용하여 오른쪽 끝으로 이동 */
 }
 
+#userid {
+  display: block;
+  margin-left: 15px;
+}
+
 #searchbtn {
   width: 17px;
   height: 17px;
@@ -51,15 +82,22 @@
   margin-left: 0;
 }
 
-
 input {
   margin-right: 5px;
   width: 90px;
   border: 1px solid #e7e7e7;
-  border-radius: 2px;
+  border-radius: 5px;
   margin: 0 5px 0 0;
-  padding: 2px;
+  padding: 3px;
   font-size: 12px;
+}
+
+input::placeholder {
+  font-family: "Noto Sans KR", "Ubuntu";
+}
+
+#mob-search {
+  display: none;
 }
 
 .btn {
@@ -69,13 +107,19 @@ input {
   font-size: 12px;
   color: #444;
   margin-left: 2px;
-
   font-weight: bold;
 }
 
 .btn:hover {
   cursor: pointer;
 }
+
+.searchBox {
+  flex-basis: 100%;
+  width: 80%;
+}
+
+
   
   
   @media screen and (max-width: 735px) {
@@ -85,22 +129,99 @@ input {
       width: 100%;
       padding: 10px;
       font-weight: bold;
-      justify-content: right;
+      justify-content: space-between;
       align-items: center;
+      position: relative; /* 확실한 레이어 위치 설정 */
+      z-index: 1050; /* 모든 메뉴와 요소 위에 navbar가 위치하도록 설정 */
     }
 
     .mobileMenu {
-      display: block;
+      position: fixed;
+      top: 0;
+      left: 100%; /* 시작 위치를 오른쪽 끝으로 설정 */
       width: 100%;
-      background-color: white;
+      /* opacity: 90%; */
+      height: 100vh;
+      background-color: #f1f1f1;
+      transition: transform 0.5s ease-in-out; /* transform 사용 */
+      z-index: 1040; /* navbar보다는 아래지만 나머지 요소보다는 위에 위치 */
+      overflow-y: hidden;
+      display: block;
+    }
+    
+
+    .mobileMenu.active {
+      transform: translateX(-100%);
     }
 
-    .mobileMenu img {
+    .mobileMenu h2 {
       display: block;
+      margin-top: 70px;
+      font-size: 30px;
+      font-weight: bold;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .mobileMenu ul {
+      margin-bottom: 50px;
+    }
+
+    .mobileMenu li {
+      font-size: 20px;
+    }
+
+    .mob-search {
+      display: flex;
+      justify-content: center;
+      width: 300px;
+      margin-top: 5px;
+      padding: 6px;
+      border-radius: 50px;
+      border: 2px solid #919191;
+      box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    #input-search {
+      width: 230px;
+      background-color: #f1f1f1;
+      border: none;
+      font-size: 15px;
+    }
+
+    #input-search::placeholder {
+      font-size: 15px;
+      align-items: center;
+    }
+
+    #btn-search {
+      width: 30px;
+      height: 30px;
+    }
+
+    #btn-mob-menu {
+      display: block;
+      background-image: url(./book_1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: none;
       width: 35px;
       height: 35px;
-      transform: rotate(270deg);
+      transform: rotate(-90deg);
       margin-right: 20px;
+      cursor: pointer;
+    }
+
+    #btn-cancel {
+      position: absolute;
+      display: block;
+      background-image: url(./btn_cancel.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 35px;
+      height: 35px;
+      border: none;
+      margin-right: 20px;
+      cursor: pointer;
     }
 
     .menu-item {
