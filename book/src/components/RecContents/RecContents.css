@@ -1,19 +1,17 @@
 .rec-contents {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    width: 80%;
-    margin-bottom: 20px;
-    padding: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
 }
 
 .rec-title {
-    width: 100%;
-    /* flex: 0 1 auto; */
+    width: 80%;
     font-size: 30px;
     font-weight: bold;
-    padding-right: 30px;
-    /* border-right: 1px dotted #d1d1d1; */
     margin-bottom: 20px;
 }
 
@@ -21,18 +19,45 @@
     line-height: 15px;
 }
 
-#recimg{
-    border-radius: 5px;
-}
-
 .rec-items {
-    flex-grow: 1; /*rec-contents의 나머지 공간을 채우도록 설정*/
+    /* flex-grow: 1; rec-contents의 나머지 공간을 채우도록 설정 */
     display: flex; /* 내부 card들을 좌우로 나열 */
     flex-wrap: wrap; /* card가 여러 개일 때 다음 줄로 넘기기 */
     justify-content: space-around; /* card 사이의 간격을 균일하게 조절 */
     margin-top: 20px; /* rec-title과의 간격 */
-    width: 100%;
+    width: 80%;
+    display: flex;
+    overflow: hidden; /* 내용이 넘치면 숨김 */
+    position: relative; /* 버튼을 위한 상대 위치 */
+    padding: 0 20px
 }
+
+.btnPrev, .btnNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 20%;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+}
+
+.btnPrev {
+    background-image: url(./btn-prev.png);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    left: 10px; /* 왼쪽 가장자리로부터의 거리 */
+}
+
+.btnNext {
+    background-image: url(./btn-next.png);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    right: 10px; /* 오른쪽 가장자리로부터의 거리 */
+}
+
 
 .rec-item-1 {
     width: 100%;
@@ -42,6 +67,7 @@
 }
 
 .card {
+    position: relative;
     display: inline-block;
     flex: 0 0 auto;
     width: 200px;
@@ -49,15 +75,16 @@
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
-    margin: 0 30px;
+    margin: 5px;
     margin-left: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .cardinfo {
-    display: block;
     word-wrap: break-word;
 }
 
@@ -82,14 +109,6 @@
     margin-right: 5px;
 }
 
-.pages {
-    clear: both;
-    display: block;
-    text-align: center; /* 페이지 번호 중앙 정렬 */
-    margin-top: 20px;
-    width: 100%;
-}
-
 a:link, a:hover {
     text-decoration: none;
     cursor: pointer;
@@ -98,22 +117,28 @@ a:link, a:hover {
 @media screen and (max-width: 735px) {
 
     .rec-contents {
-        /* background-image: url('./rec-img2-1.jpg');
-        background-repeat: no-repeat; */
-        width: 80%;
+        width: 100%;
         flex-direction: column;
+    }
+
+    .rec-items {
+        width: 80%;
     }
 
     .rec-title {
 
-        width: 100%;
+        width: 80%;
         border: none;
     }
 
-    .rec-title img {
-        width: 100%;
-        height: 500px;
-        display: block;
+    .btnPrev, .btnNext {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        border: none;
+        cursor: pointer;
+        opacity: 20%;
     }
 
     .card {
